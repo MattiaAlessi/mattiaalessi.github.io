@@ -1,9 +1,18 @@
+import { useRef } from 'react'
+import { useReveal } from '../../lib/motion'
 import { projects } from '../../data/projects'
 
 export default function Projects() {
+  const sectionRef = useRef<HTMLElement>(null)
+  useReveal(sectionRef)
+
   return (
-    <section id="projects" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24">
-      <div className="flex items-baseline justify-between border-b border-line pb-4">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24"
+    >
+      <div data-reveal className="flex items-baseline justify-between border-b border-line pb-4">
         <h2 className="font-mono text-xs tracking-widest text-accent">
           01 / PROJECTS
         </h2>
@@ -16,6 +25,7 @@ export default function Projects() {
         {projects.map((p, i) => (
           <a
             key={p.url}
+            data-reveal
             href={p.url}
             target="_blank"
             rel="noreferrer"

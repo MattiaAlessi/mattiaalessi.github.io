@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  Sorgente dell'og-image (1200×630). Per rigenerarla:
+  1. avvia `npm run dev`
+  2. apri http://localhost:5173/og-image-source.html — no: questo file è alla
+     root del progetto, non in public/, quindi aprilo col percorso completo del
+     file oppure temporaneamente copialo in public/.
+  3. screenshot 1200×630 → public/og-image.png
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>og-image source</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        position: relative;
+        background: #101214;
+        color: #f3f4f4;
+        font-family: "Space Grotesk", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 90px;
+        box-sizing: border-box;
+      }
+      .orb {
+        position: absolute;
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 34%, #ffb199 0%, #ff4f36 42%, rgba(255, 79, 54, 0.12) 72%, transparent 78%);
+        filter: blur(2px);
+      }
+      .halo {
+        position: absolute;
+        right: -180px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 820px;
+        height: 820px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 79, 54, 0.22) 0%, transparent 62%);
+      }
+      .label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 22px;
+        letter-spacing: 0.35em;
+        color: #ff4f36;
+      }
+      h1 { font-size: 96px; font-weight: 700; letter-spacing: -0.02em; margin-top: 22px; }
+      p { font-size: 30px; color: #9aa0a6; margin-top: 20px; max-width: 640px; line-height: 1.4; }
+      .brand {
+        position: absolute; top: 48px; left: 90px;
+        font-family: "IBM Plex Mono", monospace; font-size: 24px; color: #ff4f36;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="halo"></div>
+    <div class="orb"></div>
+    <span class="brand">&lt;ma /&gt;</span>
+    <span class="label">CS STUDENT · BUILDER</span>
+    <h1>Mattia Alessi</h1>
+    <p>Security research · neural TTS · Deep Q-Learning · 3D web</p>
+  </body>
+</html>

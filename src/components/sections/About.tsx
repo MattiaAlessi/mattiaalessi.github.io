@@ -1,3 +1,6 @@
+import { useRef } from 'react'
+import { useReveal } from '../../lib/motion'
+
 const skills = [
   { name: 'Python', note: 'security, automation, ML' },
   { name: 'C# / Unity', note: 'game dev, tooling' },
@@ -7,31 +10,39 @@ const skills = [
 ]
 
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null)
+  useReveal(sectionRef)
+
   return (
-    <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24">
-      <div className="flex items-baseline justify-between border-b border-line pb-4">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24"
+    >
+      <div data-reveal className="flex items-baseline justify-between border-b border-line pb-4">
         <h2 className="font-mono text-xs tracking-widest text-accent">02 / ABOUT</h2>
         <span className="font-mono text-xs text-muted/60">whoami</span>
       </div>
 
       <div className="mt-10 grid gap-12 md:grid-cols-2">
-        <div className="space-y-5">
+        <div data-reveal className="space-y-5">
           <p className="text-lg leading-relaxed text-text/90">
             Computer science student focused on security and networking.
-            I learn by building: from a keylogger used as a{' '}
-            <span className="text-accent">security research</span> tool to
-            desktop apps and neural networks.
+            I learn by building: from a{' '}
+            <span className="text-accent">red-team research tool</span> used
+            in authorized engagements to a local neural TTS desktop app and a
+            Deep Q-Learning agent.
           </p>
           <p className="leading-relaxed text-muted">
             Most of my projects start as a question I can&apos;t stop thinking
             about. I prototype fast, break things, and keep what teaches me
             something. Right now I&apos;m digging deeper into low-level systems
-            and the web&apos;s 3D frontier.
+            and the web&apos;s 3D frontier — like this site, which I built with
+            React Three Fiber and a custom GLSL shader.
           </p>
-          {/* TODO M5: bio reale, disponibilità, interessi */}
         </div>
 
-        <div>
+        <div data-reveal>
           <h3 className="font-mono text-xs tracking-widest text-muted/60">
             STACK
           </h3>
